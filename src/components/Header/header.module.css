@@ -1,0 +1,11 @@
+.header {
+  position: absolute;
+  top: 0;
+  padding: 20px 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: transparent;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
