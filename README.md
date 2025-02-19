@@ -2,49 +2,25 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+Команды
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Запуск проекта:
 
-## Expanding the ESLint configuration
+npm run start – Vite dev-сервер (http://localhost:5173/)
+npm run dev – Vite dev-сервер + JSON Server (http://localhost:3001/)
+npm run server – Только JSON Server (http://localhost:3001/)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Разработка и проверка:
 
-- Configure the top-level `parserOptions` property like this:
+npm run build – Сборка проекта (TypeScript + Vite)
+npm run lint – Проверка кода ESLint
+npm run preview – Просмотр собранного проекта (http://localhost:4173/)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Установка
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+npm install
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Требования
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Node.js
+npm
