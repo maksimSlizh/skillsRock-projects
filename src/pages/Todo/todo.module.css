@@ -37,12 +37,12 @@
 }
 
 .todo__list {
- list-style: none;
- padding: 0;
- margin: 0;
- overflow-y: auto;
- height: 100%;
- display: flex;
- flex-direction: column;
- gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

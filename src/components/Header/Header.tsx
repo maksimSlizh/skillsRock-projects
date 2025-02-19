@@ -1,10 +1,12 @@
-import { Navbar } from '../Navbar/Navbar'
+import { Navbar } from '@/components'
 import style from './Header.module.css'
 
-export const Header = () => {
+const Header = () => {
   return (
     <header className={style.header}>
       <Navbar />
     </header>
   )
 }
+
+export default Header

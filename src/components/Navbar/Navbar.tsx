@@ -2,14 +2,28 @@ import { NavLink } from 'react-router-dom'
 import style from './Navbar.module.css'
 
 interface INavigationProps
-  extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
-    variant?: 'header' | 'footer'
+  extends React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLElement>,
+    HTMLElement
+  > {
+  variant?: 'header' | 'footer'
 }
 
-export const Navbar: React.FC<INavigationProps> = () => {
+const links = [
+  { name: 'Todo', path: '/todo' },
+  { name: 'Todo RTK', path: '/todo-rtk' },
+]
+
+const Navbar: React.FC<INavigationProps> = () => {
   return (
     <nav className={style.nav}>
-      <NavLink to="/todo">Todo</NavLink>
+      {links.map(({ name, path }) => (
+        <NavLink key={name} to={path}>
+          {name}
+        </NavLink>
+      ))}
     </nav>
   )
 }
+
+export default Navbar

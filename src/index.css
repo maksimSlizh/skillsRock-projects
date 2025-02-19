@@ -5,7 +5,11 @@
 }
 
 body {
-  background: linear-gradient(to top right, rgba(3,64,69,255), rgba(10,216,167,1));
+  background: linear-gradient(
+    to top right,
+    rgba(3, 64, 69, 255),
+    rgba(10, 216, 167, 1)
+  );
   height: 100vh;
   margin: 0;
 }
