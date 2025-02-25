@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-.nav a {
+.nav__link {
   margin: 0 10px;
   padding: 10px 20px;
   color: #fff;
@@ -16,6 +16,10 @@
   transition: background 0.3s ease;
 }
 
-.nav a:hover {
+.nav__link:hover {
   background-color: #004d40;
+}
+
+.active {
+  background-color: #1b4322;
 }

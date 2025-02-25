@@ -18,7 +18,13 @@ const Navbar: React.FC<INavigationProps> = () => {
   return (
     <nav className={style.nav}>
       {links.map(({ name, path }) => (
-        <NavLink key={name} to={path}>
+        <NavLink
+          key={name}
+          to={path}
+          className={({ isActive }) =>
+            isActive ? `${style.nav__link} ${style.active}` : style.nav__link
+          }
+        >
           {name}
         </NavLink>
       ))}

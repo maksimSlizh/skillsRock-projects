@@ -1,6 +1,6 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom'
 import { Layout } from '@/components'
-import { Todo, TodoRtk } from '@/pages'
+import { Todo, TodoRtk, TodoRtkDetails } from '@/pages'
 
 const router = createBrowserRouter([
   {
@@ -17,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: '/todo-rtk',
         element: <TodoRtk />,
+      },
+      {
+        path: '/todo-rtk/:id',
+        element: <TodoRtkDetails />,
       },
     ],
   },

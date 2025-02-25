@@ -1,10 +1,9 @@
-import { TodoItem } from '@/pages/Todo/elements'
+import { TodoRtkItem } from '@/pages/TodoRtk/elements'
 import { ITodo } from '@/types/interface'
 import {
   useGetTodosQuery,
   useDeleteTodoMutation,
   useChangeStatusMutation,
-  useChangeTodoMutation,
 } from '@/api'
 import style from '@/pages/Todo/todo.module.css'
 
@@ -12,14 +11,12 @@ const TodoRtkContainer = () => {
   const { data = [], isLoading } = useGetTodosQuery()
   const [deleteTodo] = useDeleteTodoMutation()
   const [changeStatus] = useChangeStatusMutation()
-  const [changeTodo] = useChangeTodoMutation()
 
   const handleDelete = async (id: number) => {
     try {
       await deleteTodo(id).unwrap()
-      console.log(`Задача ${id} удалена`)
     } catch (error) {
-      console.error('Ошибка удаления', error)
+      throw new Error('Error deleting todo')
     }
   }
 
@@ -29,18 +26,8 @@ const TodoRtkContainer = () => {
 
     try {
       await changeStatus({ id, iscompleted: !task.iscompleted }).unwrap()
-      console.log(`Статус задачи ${id} изменен`)
     } catch (error) {
-      console.error('Ошибка изменения статуса', error)
-    }
-  }
-
-  const handleUpdateTodo = async (todo: ITodo) => {
-    try {
-      await changeTodo(todo).unwrap()
-      console.log(`Задача ${todo.id} обновлена`)
-    } catch (error) {
-      console.error('Ошибка обновления задачи', error)
+      throw new Error('Error changing status')
     }
   }
 
@@ -51,12 +38,11 @@ const TodoRtkContainer = () => {
   return (
     <ul className={style.todo__list}>
       {[...data].reverse().map((task: ITodo) => (
-        <TodoItem
+        <TodoRtkItem
           key={task.id}
-          task={task}
+          taskId={task.id}
           handleDelete={handleDelete}
           handleComplete={handleComplete}
-          handleUpdateTodo={handleUpdateTodo}
         />
       ))}
     </ul>

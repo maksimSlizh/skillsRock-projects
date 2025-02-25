@@ -10,7 +10,6 @@ const TodoRtkForm = () => {
   const [value, setValue] = useState('')
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    console.log('submit')
     e.preventDefault()
 
     if (!value.trim()) return
@@ -22,6 +21,8 @@ const TodoRtkForm = () => {
     }
 
     await addTodo(newTask)
+
+    setValue('')
   }
 
   return (
