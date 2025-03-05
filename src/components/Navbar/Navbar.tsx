@@ -12,6 +12,7 @@ interface INavigationProps
 const links = [
   { name: 'Todo', path: '/todo' },
   { name: 'Todo RTK', path: '/todo-rtk' },
+  { name: 'Auth', path: '/auth' },
 ]
 
 const Navbar: React.FC<INavigationProps> = () => {

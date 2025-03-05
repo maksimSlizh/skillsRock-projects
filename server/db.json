@@ -14,5 +14,34 @@
       "text": "kdfgodg",
       "iscompleted": false
     }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "email": "0Y5Qj@example.com",
+      "password": "123",
+      "username": "admin",
+      "firstName": "admin",
+      "lastName": "admin",
+      "company": "admin"
+    },
+    {
+      "id": "1741195898240",
+      "email": "maksimslizh@gmail.com",
+      "password": "111111",
+      "username": "neverwin",
+      "firstName": "Maksim",
+      "lastName": "Slizh",
+      "company": "NashRealt"
+    },
+    {
+      "id": "1741196031775",
+      "email": "maksimslizh@gmail.com",
+      "password": "111111",
+      "username": "neverwin",
+      "firstName": "Maksim",
+      "lastName": "Slizh",
+      "company": "21312"
+    }
   ]
 }
