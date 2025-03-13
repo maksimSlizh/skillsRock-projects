@@ -1,4 +1,4 @@
-import { ButtonProps } from "@mui/material";
+import { ButtonProps } from '@mui/material'
 
 export type TStyledButton = {
   onClick?: () => void

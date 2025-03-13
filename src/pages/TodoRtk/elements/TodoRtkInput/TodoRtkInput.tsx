@@ -69,4 +69,3 @@ const TodoRtkInput: React.FC<TodoRtkInputProps> = ({ taskId }) => {
 }
 
 export default TodoRtkInput
-

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { UIButton} from '@/ui'
+import { UIButton } from '@/ui'
 import { TodoRtkInput } from '../TodoRtkInput'
 import { SvgIcon } from '@/assets'
 import style from './TodoRtkItem.module.css'
@@ -16,7 +16,6 @@ const TodoRtkItem: React.FC<TodoItemProps> = ({
   handleDelete,
   handleComplete,
 }) => {
-
   const navigate = useNavigate()
 
   return (

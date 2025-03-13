@@ -1,6 +1,5 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom'
-import { Layout } from '@/components'
-import { Todo, TodoRtk, TodoRtkDetails, Auth} from '@/pages'
+import { Layout, Todo, TodoRtk, TodoRtkDetails, Auth, DataTable } from '@/pages'
 
 const router = createBrowserRouter([
   {
@@ -25,7 +24,11 @@ const router = createBrowserRouter([
       {
         path: '/auth',
         element: <Auth />,
-      }
+      },
+      {
+        path: '/table',
+        element: <DataTable />,
+      },
     ],
   },
 ])

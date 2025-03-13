@@ -1,14 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-
-interface IUser {
-  id: string;
-  email: string;
-  password: string;
-  username: string;
-  firstName: string;
-  lastName: string;
-  company: string;
-}
+import { IUser } from '@/types/interface'
 
 export const usersApi = createApi({
   reducerPath: 'usersApi',
@@ -21,8 +12,28 @@ export const usersApi = createApi({
       query: () => 'users',
       providesTags: (result) =>
         result
-          ? [...result.map(({ id }) => ({ type: 'User' as const, id })), { type: 'User', id: 'LIST' }]
+          ? [
+              ...result.map(({ id }) => ({ type: 'User' as const, id })),
+              { type: 'User', id: 'LIST' },
+            ]
           : [{ type: 'User', id: 'LIST' }],
+    }),
+    getUsersByFilter: builder.query<IUser[], Partial<IUser>>({
+      query: (params) => {
+        const urlParams = new URLSearchParams()
+
+        Object.keys(params).forEach((key) => {
+          const typedKey = key as keyof IUser
+          if (params[typedKey] && params[typedKey]?.toString().trim() !== '') {
+            urlParams.append(`${typedKey}`, params[typedKey] as string)
+          }
+        })
+
+        const queryString = urlParams.toString()
+
+        return queryString ? `users?${queryString}` : 'users'
+      },
+      providesTags: ['User'],
     }),
     addUser: builder.mutation({
       query: (user) => ({
@@ -35,4 +46,8 @@ export const usersApi = createApi({
   }),
 })
 
-export const { useGetUsersQuery, useAddUserMutation } = usersApi
+export const {
+  useGetUsersQuery,
+  useLazyGetUsersByFilterQuery,
+  useAddUserMutation,
+} = usersApi

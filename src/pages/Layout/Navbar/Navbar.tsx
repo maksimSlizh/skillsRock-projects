@@ -13,6 +13,7 @@ const links = [
   { name: 'Todo', path: '/todo' },
   { name: 'Todo RTK', path: '/todo-rtk' },
   { name: 'Auth', path: '/auth' },
+  { name: 'Table', path: '/table' },
 ]
 
 const Navbar: React.FC<INavigationProps> = () => {

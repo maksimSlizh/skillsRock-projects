@@ -1,4 +1,4 @@
-import { Navbar } from '@/components'
+import { Navbar } from '@/pages/Layout'
 import style from './Header.module.css'
 
 const Header = () => {

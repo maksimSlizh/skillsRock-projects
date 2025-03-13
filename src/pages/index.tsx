@@ -1,4 +1,6 @@
+export { default as Layout } from './Layout/Layout'
 export { default as Todo } from './Todo/Todo'
 export { default as TodoRtk } from './TodoRtk/TodoRtk'
 export { default as TodoRtkDetails } from './TodoRtk/TodoRtkDetails/TodoRtkDetails'
-export {default as Auth} from './Auth/Auth'
+export { default as Auth } from './Auth/Auth'
+export { default as DataTable } from './DataTable/DataTable'
